@@ -4,5 +4,5 @@
 */migrations*
 error_log
 access_log
-main/settings.py
+FollowerFlow/settings.py
 .idea/*
