@@ -1,0 +1,8 @@
+.idea/workspace.xml
+*.pyc
+*/media/*
+*/migrations*
+error_log
+access_log
+main/settings.py
+.idea/*
