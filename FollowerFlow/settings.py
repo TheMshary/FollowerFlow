@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'followerflow',
         'HOST': '127.0.0.1',
         'USER': 'root',
-        'PASSWORD': 'reapak',
+        'PASSWORD': 'Anonymous3',
         'PORT': ''
     }
 }
