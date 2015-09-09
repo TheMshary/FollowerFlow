@@ -22,6 +22,6 @@ def index(request):
         CODE = request.GET.get('code')
         post_url = 'https://api.instagram.com/oauth/access_token?client_secret=%s&grant_type=authorization_code&redirect_uri=%s&code=%s'% (CLIENT_SECRET, REDIRECT_URI, CODE)
         url = post_url
-        context['response'] = urllib2.urlopen(url).read()
+        context['response'] = str(urllib2.urlopen(url))
 
     return render_to_response('base.html', context, context_instance=RequestContext(request))
