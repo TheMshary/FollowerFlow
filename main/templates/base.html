@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Title Here</title>
+</head>
+<body>
+<form action="{{ instagram_login_gateway }}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Login with Instagram">
+</form>
+
+<p>{{ response }}</p>
+</body>
+</html>
