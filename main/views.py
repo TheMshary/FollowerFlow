@@ -23,5 +23,6 @@ def index(request):
 
         response = requests.post(post_url)
         context['response'] = response
+        context['code'] = CODE
 
     return render_to_response('base.html', context, context_instance=RequestContext(request))
