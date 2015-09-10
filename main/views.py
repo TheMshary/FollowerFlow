@@ -18,7 +18,18 @@ def index(request):
     if request.GET.get('code') == None:
         context['instagram_login_gateway'] = instagram_login_gateway
     else:
-        return HttpResponseRedirect(access_token)
+        CODE = request.GET.get('code')
+        params = {}
+        params['client_id'] = CLIENT_ID
+        params['client_secret'] = CLIENT_SECRET
+        params['grant_type'] = 'authorization_code'
+        params['redirect_uri'] = REDIRECT_URI
+        params['code'] = CODE
+        response = requests.post(access_token, params=params)
+        context['response'] = response
 
 
     return render_to_response('base.html', context, context_instance=RequestContext(request))
+
+
+
