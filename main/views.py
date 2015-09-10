@@ -1,3 +1,4 @@
+import json
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 import requests
@@ -26,7 +27,7 @@ def index(request):
         params['redirect_uri'] = REDIRECT_URI
         params['code'] = CODE
         response = requests.post(access_token, params=params)
-        context['response'] = response
+        context['response'] = json.dumps(response)
 
 
     return render_to_response('base.html', context, context_instance=RequestContext(request))
