@@ -19,9 +19,8 @@ def index(request):
     else:
         CODE = request.GET.get('code')
         post_url = 'https://api.instagram.com/oauth/access_token?client_secret=%s&grant_type=authorization_code&redirect_uri=%s&code=%s'% (CLIENT_SECRET, REDIRECT_URI, CODE)
-        # write response to file to view.
-        f = open('response.txt', 'w')
-        f.write(requests.POST(post_url))
-        f.close()
+
+        response = requests.post(post_url)
+        context['response'] = response
 
     return render_to_response('base.html', context, context_instance=RequestContext(request))
