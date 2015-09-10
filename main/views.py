@@ -27,7 +27,7 @@ def index(request):
         params['redirect_uri'] = REDIRECT_URI
         params['code'] = CODE
         response = requests.post(access_token, params=params)
-        context['response'] = json.dumps(response.json())
+        context['response'] = response.text
 
 
     return render_to_response('base.html', context, context_instance=RequestContext(request))
